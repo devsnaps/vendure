@@ -134,35 +134,6 @@ export const config = {
 };
 ```
 
-[If your plugin includes UI extensions]
-If not already installed, install the `@vendure/ui-devkit` package:
-
-```bash
-npm install @vendure/ui-devkit
-```
-
-Then set up the compilation of the UI extensions for the Admin UI:
-
-```ts
-// vendure-config.ts
-import { compileUiExtensions } from '@vendure/ui-devkit/compiler';
-import { LoyaltyPointsPlugin } from '@acme/vendure-plugin-loyalty-points';
-
-// ...
-plugins: [
-  AdminUiPlugin.init({
-    route: 'admin',
-    port: 3002,
-    app: compileUiExtensions({
-      outputPath: path.join(__dirname, '../admin-ui'),
-      extensions: [LoyaltyPointsPlugin.uiExtensions],
-      devMode: false,
-    })
-  }),
-],
-```
-[/If your plugin includes UI extensions]
-
 ## Usage
 
 Describe how to use your plugin here. Make sure to cover the key
@@ -220,41 +191,6 @@ export class LoyaltyPointsPlugin implements OnApplicationBootstrap {
     static init(options: LoyaltyPointsPluginInitOptions) {
         this.options = options;
         return AdvancedSearchPlugin;
-    }
-
-    /**
-     * The static `uiExtensions` property is used to provide the
-     * necessary UI extensions to the Admin UI
-     * in order to display the loyalty points admin features.
-     * This property is used in the `AdminUiPlugin` initialization.
-     *
-     * @example
-     * ```ts
-     * import { compileUiExtensions } from '@vendure/ui-devkit/compiler';
-     * import { AdvancedSearchPlugin } from '@acme/vendure-plugin-loyalty-points';
-     *
-     * // ...
-     * plugins: [
-     *   AdminUiPlugin.init({
-     *     route: 'admin',
-     *     port: 3002,
-     *     app: compileUiExtensions({
-     *       outputPath: path.join(__dirname, '../admin-ui'),
-     *       extensions: [LoyaltyPointsPlugin.uiExtensions],
-     *       devMode: false,
-     *     })
-     *   }),
-     * ],
-     * ```
-     */
-    static uiExtensions = advancedSearchPluginUi;
-
-    /** @internal */
-    constructor(/* ... */) {}
-
-    /** @internal */
-    async onApplicationBootstrap() {
-        // Logic to set up event subscribers etc.
     }
 }
 ```

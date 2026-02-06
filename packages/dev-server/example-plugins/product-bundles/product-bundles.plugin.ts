@@ -1,6 +1,4 @@
 import { PluginCommonModule, VendurePlugin } from '@vendure/core';
-import { AdminUiExtension } from '@vendure/ui-devkit/compiler';
-import path from 'path';
 
 import { adminApiExtensions, shopApiExtensions } from './api/api-extensions';
 import { ProductBundleAdminResolver } from './api/product-bundle-admin.resolver';
@@ -39,10 +37,4 @@ import { ProductBundleService } from './services/product-bundle.service';
     },
 })
 export class ProductBundlesPlugin {
-    static uiExtensions: AdminUiExtension = {
-        id: 'product-bundles',
-        extensionPath: path.join(__dirname, 'ui'),
-        routes: [{ route: 'product-bundles', filePath: 'routes.ts' }],
-        providers: ['providers.ts'],
-    };
 }

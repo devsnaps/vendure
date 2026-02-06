@@ -449,25 +449,6 @@ vendureLoginButton.addEventListener('click', () => {
 });
 ```
 
-We also need to tell the Admin UI application about the custom login URL, since we have no need for the default "username/password" login form. This can be done by setting the [`loginUrl` property](/reference/typescript-api/common/admin-ui/admin-ui-config#loginurl) in the AdminUiConfig:
-
-```ts title="/src/vendure-config.ts"
-import { VendureConfig } from '@vendure/core';
-import { AdminUiPlugin } from '@vendure/admin-ui-plugin';
-
-export const config: VendureConfig = {
-    // ...
-    plugins: [
-        AdminUiPlugin.init({
-            port: 5001,
-            adminUiConfig: {
-                loginUrl: 'http://intranet/login',
-            },
-        }),
-    ],
-};
-```
-
 #### Backend
 
 First we will need to be making an HTTP call to our Keycloak server to validate the token and get the user's details. We'll use the [`node-fetch`](https://www.npmjs.com/package/node-fetch) library to make the HTTP call:

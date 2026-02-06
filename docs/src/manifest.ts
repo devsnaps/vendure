@@ -761,17 +761,7 @@ const manifestInput: DocsPackageManifestInput = {
                     slug: 'core-plugins',
                     file: file('docs/reference/core-plugins/index.mdx'),
                     children: [
-                        {
-                            title: 'AdminUiPlugin',
-                            slug: 'admin-ui-plugin',
-                            file: file('docs/reference/core-plugins/admin-ui-plugin/index.mdx'),
-                            children: createNestedNavigationFromFolder(
-                                folder('docs/reference/core-plugins/admin-ui-plugin'),
-                                {
-                                    filter: (info: FileInfo) => info.filename !== 'index.mdx',
-                                },
-                            ),
-                        },
+                        // AdminUiPlugin removed
                         {
                             title: 'AssetServerPlugin',
                             slug: 'asset-server-plugin',

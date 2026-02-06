@@ -1,4 +1,3 @@
-import { AdminUiPlugin } from '@vendure/admin-ui-plugin';
 import {
     ChannelService,
     DefaultLogger,
@@ -44,10 +43,6 @@ export let clientSecret: string;
     const config = mergeConfig(testConfig, {
         plugins: [
             ...testConfig.plugins,
-            AdminUiPlugin.init({
-                route: 'admin',
-                port: 5001,
-            }),
             StripePlugin.init({}),
             StripeCheckoutTestPlugin,
             StripeServiceExportTestPlugin,

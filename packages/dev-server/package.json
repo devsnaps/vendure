@@ -20,7 +20,6 @@
     },
     "dependencies": {
         "@nestjs/axios": "^4.0.0",
-        "@vendure/admin-ui-plugin": "3.5.3",
         "@vendure/asset-server-plugin": "3.5.3",
         "@vendure/common": "3.5.3",
         "@vendure/core": "3.5.3",
@@ -30,7 +29,6 @@
     },
     "devDependencies": {
         "@vendure/testing": "3.5.3",
-        "@vendure/ui-devkit": "3.5.3",
         "commander": "^12.0.0",
         "concurrently": "^9.2.0",
         "csv-stringify": "^6.4.6",

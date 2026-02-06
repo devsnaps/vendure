@@ -21,10 +21,7 @@ Vendure is a headless e-commerce framework built on NestJS, TypeORM, and GraphQL
 - `@vendure/testing` - E2E test utilities
 
 ### UI Packages
-- `@vendure/admin-ui` - Angular admin (legacy)
 - `@vendure/dashboard` - React admin (new, replacing Angular)
-- `@vendure/admin-ui-plugin` - Serves admin UI
-- `@vendure/ui-devkit` - UI extension authoring
 
 ### Plugins
 - `@vendure/asset-server-plugin` - Asset serving + S3

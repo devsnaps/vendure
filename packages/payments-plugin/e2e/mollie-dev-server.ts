@@ -1,4 +1,3 @@
-import { AdminUiPlugin } from '@vendure/admin-ui-plugin';
 import { DefaultLogger, DefaultSearchPlugin, LogLevel, mergeConfig } from '@vendure/core';
 import { createTestEnvironment, registerInitializer, SqljsInitializer, testConfig } from '@vendure/testing';
 import gql from 'graphql-tag';
@@ -33,10 +32,6 @@ async function runMollieDevServer() {
         plugins: [
             ...testConfig.plugins,
             DefaultSearchPlugin,
-            AdminUiPlugin.init({
-                route: 'admin',
-                port: 5001,
-            }),
             MolliePlugin.init({ vendureHost: tunnel.url }),
         ],
         logger: new DefaultLogger({ level: LogLevel.Debug }),

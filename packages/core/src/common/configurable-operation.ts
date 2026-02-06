@@ -26,7 +26,7 @@ import { InjectableStrategy } from './types/injectable-strategy';
 /**
  * @description
  * An array of string values in a given {@link LanguageCode}, used to define human-readable string values.
- * The `ui` property can be used in conjunction with the Vendure Admin UI to specify a custom form input
+ * The `ui` property can be used in conjunction with the Vendure Dashboard to specify a custom form input
  * component.
  *
  * @example
